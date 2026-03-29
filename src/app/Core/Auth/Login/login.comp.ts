@@ -18,80 +18,46 @@ export class LoginComp {
 
   private readonly authSRV = inject(AuthSRV)
   private readonly router = inject(Router)
-  private readonly fb = inject(FormBuilder)
 
-  // loginForm: FormGroup = new FormGroup({
-  //   email: new FormControl(null, [Validators.required, Validators.email]),
-  //   password: new FormControl(null, [Validators.required]),
-  // })
+ successMass: string = '';
+  errorMass: string = '';
+  isLoading: boolean = false;
 
-loginForm: FormGroup=this.fb.group({
-email:[null,([Validators.required, Validators.email])],
-password:[null,([Validators.required])]
-})
+  formLogin: FormGroup = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [ Validators.required]), },
+  );
 
-  errorMsg: string = ''
-  successMsg: string = ''
-  isLoading: boolean = false
 
-  signIn() {
-    if (this.loginForm.valid) {
+  sginIn() {
+    if (this.formLogin.valid) {
+      this.isLoading = true;
 
-      this.isLoading = true
-
-      this.authSRV.signIn(this.loginForm.value).subscribe({
+      this.authSRV.signIn(this.formLogin.value).subscribe({
         next: (res) => {
-          // console.log(res);
-
-          // show loading spinner
-          this.isLoading = false
-
-          // HIDE ERR MESSAGE
-          this.errorMsg=''
-
-          // handle success msg
-          this.successMsg = res.message
-
-          // programing navigate to login
-          // this.router.navigate(['/login'])
-
-
-          // save token
-          localStorage.setItem('access-token',res.data.token)
-
-          // if success => navigate to home
-          setTimeout(() => this.router.navigate(['/home']), 5000)
-
+          if (res.success) {
+            console.log(res);
+            this.errorMass = '';
+            this.successMass = res.message;
+            this.isLoading = false;
+            setTimeout(() => {
+              this.router.navigate(['/home']);
+            }, 1000);
+            localStorage.setItem('token' , res.data.token)
+          }
         },
         error: (err) => {
-          // console.log(err);
-
-          // show loading spinner
-          this.isLoading = false
-          // HIDE SUCESS MESSAGE 
-                    this.successMsg = ''
-
-
-          //handle success msg
-          // this.errorMsg = err.error.message.includes('password')
-          this.errorMsg = err.error.message
-          
-
-
+          console.log(err.error);
+          this.successMass = '';
+          this.errorMass = err.error.message;
+          this.isLoading = false;
         },
-
-        complete: () => {
-
-        }
-
-      }
-      )
-
-    }
-    else {
-      this.loginForm.markAllAsTouched
+      });
+    } else {
+      this.formLogin.markAllAsTouched();
     }
   }
+
 }
 
 
