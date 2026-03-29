@@ -1,0 +1,56 @@
+<div class="min-h-screen bg-[#f0f2f5]">
+  <div class="mx-auto max-w-2xl px-3 py-3.5">
+
+    <!-- Header -->
+    <div class="mb-4 flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+      <h1 class="text-xl font-black text-slate-900">Notifications</h1>
+      @if (unreadCount > 0) {
+        <span class="rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white">
+          {{unreadCount}} unread
+        </span>
+      }
+    </div>
+
+    <!-- Notifications List -->
+    @if (notifications.length === 0) {
+      <p class="rounded-xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500">
+        No notifications yet.
+      </p>
+    }
+
+    @for (notification of notifications; track notification._id) {
+      <div
+        (click)="markAsRead(notification._id)"
+        class="mb-3 flex cursor-pointer items-start gap-3 rounded-xl border p-4 shadow-sm transition hover:shadow-md"
+        [class.border-blue-200]="!notification.isRead"
+        [class.bg-blue-50]="!notification.isRead"
+        [class.border-slate-200]="notification.isRead"
+        [class.bg-white]="notification.isRead">
+
+        <!-- Actor Photo -->
+        <img
+          [src]="notification.actor?.photo || 'https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png'"
+          alt="user"
+          class="h-10 w-10 shrink-0 rounded-full object-cover">
+
+        <!-- Content -->
+        <div class="min-w-0 flex-1">
+          <p class="text-sm font-semibold text-slate-800">
+            {{getNotificationMessage(notification.type, notification.actor?.name)}}
+          </p>
+          @if (notification.entity?.body) {
+            <p class="mt-1 truncate text-xs text-slate-500">"{{notification.entity.body}}"</p>
+          }
+          <p class="mt-1 text-xs text-slate-400">{{notification.createdAt | date: 'MMM d, y · h:mm a'}}</p>
+        </div>
+
+        <!-- Unread dot -->
+        @if (!notification.isRead) {
+          <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+        }
+
+      </div>
+    }
+
+  </div>
+</div>

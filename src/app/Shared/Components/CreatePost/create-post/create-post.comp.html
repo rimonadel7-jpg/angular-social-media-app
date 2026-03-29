@@ -1,0 +1,48 @@
+
+<section class="mt-5 mx-auto w-[50vw]">
+    <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div class="mb-3 flex items-start gap-3">
+            <img alt="Yousef" class="h-11 w-11 rounded-full object-cover"
+                src="https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png" />
+            <div class="flex-1">
+                <p class="text-base font-extrabold text-slate-900">Yousef</p>
+                <div class="mt-1 inline-flex items-center gap-2 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-700">
+                    <i class="fa-solid fa-earth-americas text-xs"></i>
+                    <select class="bg-transparent outline-none">
+                        <option value="public">Public</option>
+                        <option value="following">Followers</option>
+                        <option value="only_me">Only me</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <form (submit)="createPost($event)" class="relative">
+            <textarea [formControl]="postDescribtion" rows="4" placeholder="What's on your mind, Yousef?" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-[17px] leading-relaxed text-slate-800 outline-none transition focus:border-[#1877f2] focus:bg-white"></textarea>
+
+            <div class="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3">
+                <div class="relative flex items-center gap-2">
+                    <label class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100">
+                        <i class="fa-regular fa-image text-emerald-600 text-lg"></i>
+                        <span class="hidden sm:inline">Photo/video</span>
+                        <input (change)="prepareUploadedFile($event)" accept="image/*" class="hidden" type="file" />
+                    </label>
+                    <button  type="button" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100">
+                        <i class="fa-regular fa-face-smile text-amber-500 text-lg"></i>
+                        <span class="hidden sm:inline">Feeling/activity</span>
+                    </button>
+                    
+
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button type="submit" class="flex items-center gap-2 rounded-lg bg-[#1877f2] px-5 py-2 text-sm font-extrabold text-white shadow-sm transition-colors hover:bg-[#166fe5] disabled:opacity-60">
+                        Post
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>

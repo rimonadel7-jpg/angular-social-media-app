@@ -1,0 +1,60 @@
+
+
+
+<nav class="sticky top-0 z-40 border-b border-slate-200 bg-white">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-1.5">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <p class="hidden text-xl font-extrabold text-slate-900 sm:block">SocialMedia</p>
+    </div>
+
+    <!-- Nav (only show when logged in) -->
+    @if (isLoggedIn) {
+      <nav class="flex items-center gap-1 rounded-2xl border border-slate-200 bg-slate-50 px-1 py-1">
+        <a routerLink="/home" routerLinkActive="bg-white text-[#1f6fe5]"
+          class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-extrabold text-slate-600 transition hover:bg-white hover:text-slate-900">
+          <i class="fa-solid fa-house"></i>
+          <span class="hidden sm:inline">Feed</span>
+        </a>
+        <a routerLink="/profile" routerLinkActive="bg-white text-[#1f6fe5]"
+          class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-extrabold text-slate-600 transition hover:bg-white hover:text-slate-900">
+          <i class="fa-regular fa-user"></i>
+          <span class="hidden sm:inline">Profile</span>
+        </a>
+        <a routerLink="/notifications" routerLinkActive="bg-white text-[#1f6fe5]"
+          class="relative flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-extrabold text-slate-600 transition hover:bg-white hover:text-slate-900">
+          <span class="relative">
+            <i class="fa-regular fa-comment-dots"></i>
+            <span class="absolute -right-2 -top-2 inline-flex min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-2xs font-black text-white">0</span>
+          </span>
+          <span class="hidden sm:inline">Notifications</span>
+        </a>
+      </nav>
+    }
+
+    <!-- User / Auth -->
+    <div class="flex items-center gap-2">
+      @if (!isLoggedIn) {
+        <a routerLink="/login"
+          class="rounded-lg border-2 border-blue-700 px-3 py-1 text-sm font-semibold text-blue-700 transition hover:bg-blue-700 hover:text-white">
+          Login
+        </a>
+        <a routerLink="/register"
+          class="rounded-lg border-2 border-blue-700 px-3 py-1 text-sm font-semibold text-blue-700 transition hover:bg-blue-700 hover:text-white">
+          Register
+        </a>
+      }
+      @if (isLoggedIn) {
+        <button (click)="logOut()"
+          class="">
+          <!-- <img alt="user" class="h-8 w-8 rounded-full object-cover"
+            src="https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png"> -->
+          <span class="rounded-lg border-2 border-red-700 px-3 py-1 text-sm font-semibold text-red-700 transition hover:bg-red-700 hover:text-white">Log Out</span>
+          <!-- <i class="fa-solid fa-bars text-slate-500 text-sm"></i> -->
+        </button>
+      }
+    </div>
+
+  </div>
+</nav>

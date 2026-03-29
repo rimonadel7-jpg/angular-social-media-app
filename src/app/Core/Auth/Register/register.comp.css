@@ -1,0 +1,72 @@
+/* ================================
+   form-control — styles all inputs
+   ================================ */
+.form-control {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    color: #374151;
+    background-color: #f9fafb;
+    outline: none;
+    box-sizing: border-box;
+    display: block;
+}
+
+.form-control:focus {
+    border-color: #93c5fd;
+    background-color: #ffffff;
+}
+
+/* ================================
+   btn — base button style
+   ================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    transition: transform 0.2s;
+}
+
+/* ================================
+   Submit button gradient fix
+   bg-linear-to-r is Tailwind v4 only
+   this makes it work in v3 too
+   ================================ */
+button[type="submit"].btn {
+    background-image: linear-gradient(to right, #2563eb, #60a5fa);
+    border: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button[type="submit"].btn:disabled {
+    background-image: linear-gradient(to right, #6b7280, #9ca3af);
+    cursor: not-allowed;
+}
+
+/* ================================
+   "amazing people" gradient text fix
+   bg-linear-to-r + bg-clip-text is
+   Tailwind v4 — this is the v3 fix
+   ================================ */
+.title h2 span {
+    background: linear-gradient(to right, #67e8f9, #cffafe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

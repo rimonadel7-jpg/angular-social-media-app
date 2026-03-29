@@ -1,0 +1,441 @@
+<section>
+    <div class="grid lg:grid-cols-2">
+
+        <!-- LEFT SIDE -->
+        <div class="signup-hero text-white min-h-screen bg-center bg-cover flex flex-col justify-between p-10"
+            style="background-image: linear-gradient(rgba(20, 71, 230, 0.8), rgba(20, 71, 230, 0.8)), url('/SignUP-bg-PHOTO.png');">
+            <header>
+                <h1>
+                    <a class="flex items-center gap-3" href="/">
+                        <span
+                            class="size-12 text-lg font-bold flex justify-center items-center bg-white/40 border border-white/30 rounded-xl">S</span>
+                        <span class="text-2xl font-bold">Socialmedia</span>
+                    </a>
+                </h1>
+            </header>
+
+            <div class="content space-y-6">
+                <div class="title">
+                    <h2 class="text-5xl font-bold max-w-96">Conncet width
+                        <span
+                            class="pb-4 bg-linear-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">amazing
+                            people</span>
+                    </h2>
+                    <p class="mt-5 max-w-md">Join millions of users sharing moments, ideas, and building meaningful
+                        connections every day</p>
+                </div>
+
+                <div class="feature-section">
+                    <ul class="feature-cards grid lg:grid-cols-2 gap-4">
+                        <li
+                            class="flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-2 hover:scale-105 transition-transform duration-200">
+                            <div
+                                class="icon size-10 flex justify-center items-center rounded-xl bg-teal-400/20 text-green-300">
+                                <i class="fa-solid fa-message w-4"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>Real-time Chat</h4>
+                                <span>Instant messaging</span>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-2 hover:scale-105 transition-transform duration-200">
+                            <div
+                                class="icon size-10 flex justify-center items-center rounded-xl bg-blue-400/20 text-blue-100">
+                                <i class="fa-solid fa-image w-4"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>Share Media</h4>
+                                <span>Photos videos</span>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-2 hover:scale-105 transition-transform duration-200">
+                            <div
+                                class="icon size-10 flex justify-center items-center rounded-xl bg-pink-400/20 text-pink-100">
+                                <i class="fa-solid fa-bell w-4"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>Smart Alerts</h4>
+                                <span>Stay updated</span>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-2 hover:scale-105 transition-transform duration-200">
+                            <div
+                                class="icon size-10 flex justify-center items-center rounded-xl bg-teal-400/20 text-green-300">
+                                <i class="fa-solid fa-users w-4"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>Communities</h4>
+                                <span>Find your tribe</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex items-center gap-5">
+                        <li>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-users w-4"></i>
+                                <span class="text-2xl font-bold">2M+</span>
+                            </div>
+                            <p>Active Users</p>
+                        </li>
+                        <li>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-heart w-4"></i>
+                                <span class="text-2xl font-bold">10M+</span>
+                            </div>
+                            <p>Posts Shared</p>
+                        </li>
+                        <li>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-message w-4"></i>
+                                <span class="text-2xl font-bold">50M+</span>
+                            </div>
+                            <p>Messages Sent</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div
+                class="bg-white/20 border border-white/30 backdrop-blur-sm rounded-xl p-4 space-y-4 hover:bg-white/25 transition-colors duration-200">
+                <div class="rating-average text-yellow-300">
+                    <i class="fa-solid fa-star w-4 hover:scale-110 transition-transform duration-200"></i>
+                    <i class="fa-solid fa-star w-4 hover:scale-110 transition-transform duration-200"></i>
+                    <i class="fa-solid fa-star w-4 hover:scale-110 transition-transform duration-200"></i>
+                    <i class="fa-solid fa-star w-4 hover:scale-110 transition-transform duration-200"></i>
+                    <i class="fa-solid fa-star w-4 hover:scale-110 transition-transform duration-200"></i>
+                </div>
+                <p class="text-lg italic">"SocialHub has completely changed how I connect with friends and discover new
+                    communities. The experience is seamless!"</p>
+                <div class="author flex items-center gap-3">
+                    <img class="size-12 rounded-full" alt="" src="/alex-avatar-BLDJqiDr.png">
+                    <div class="info flex flex-col">
+                        <span>Alex Johnson</span>
+                        <span class="text-sm text-gray-300">Product Designer</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ====================   form   ==============  -->
+        <div class="signup-form bg-gray-100 py-12 min-h-screen flex justify-center items-center">
+            <form [formGroup]="RegisterForm" (ngSubmit)="signUp()"
+                class="w-full bg-white max-w-lg mx-auto p-8 rounded-2xl shadow space-y-5">
+                <header class="text-center space-y-2">
+                    <h2 class="text-3xl font-bold">Create account</h2>
+                    <p>Don't you have an account?<a class="text-blue-400" href="/login">Sign in</a></p>
+                </header>
+
+                <div class="social-btns flex items-center gap-3 *:grow">
+                    <button type="button" class="btn hover:scale-105 transition-transform duration-200">
+                        <i class="fa-brands fa-google text-red-500 w-4"></i>
+                        <span>Google</span>
+                    </button>
+                    <!-- <button class="btn bg-blue-600 text-white hover:scale-105 transition-transform duration-200">
+                        <i class="fa-brands fa-facebook w-4"></i>
+                        <span>Facebook</span>
+                    </button> -->
+                    <button type="button"
+                        class="flex items-center justify-center gap-2 bg-blue-500 text-white px-2 py-2 rounded-2xl hover:scale-105 transition-transform duration-200 w-25">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <div
+                    class="seperator text-gray-400 text-sm relative text-center after:w-1/3 after:h-px after:bg-linear-to-r after:from-transparent after:via-gray-400/40 after:to-transparent after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 before:w-1/3 before:h-px before:bg-linear-to-r before:from-transparent before:via-gray-400/40 before:to-transparent before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2">
+                    or continue with email
+                </div>
+
+                <div class="form-controls space-y-4">
+
+                    <!--  =============================   Full Name ========= -->
+                    <div>
+                        <label for="name" class="text-sm mb-1">Full Name</label>
+                        <div class="relative">
+                            <input formControlName="name" placeholder="Enter your full name" class="form-control pl-11"
+                                id="name" type="text" value="" name="name">
+                            <i class="fa-solid fa-user w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                        </div>
+
+                        @if (this.RegisterForm.get('name')?.errors && this.RegisterForm.get('name')?.touched) { <div
+                            class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                            role="alert">
+                            <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                                <span class="font-medium">Ensure that these requirements are met:</span>
+                                <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                    @if (this.RegisterForm.get('name')?.getError('required'))
+                                    { <li>the name is required</li>}
+
+
+                                    @if (this.RegisterForm.get('name')?.getError('minlength'))
+                                    { <li>At least 3 characters </li>}
+
+                                    @if (this.RegisterForm.get('name')?.getError('maxlength'))
+                                    { <li>maximum 20 characters</li>
+                                    }
+
+                                    <!-- <li>At least one Upper case character</li>
+                                    <li>Inclusion of at least one special character, e.g., ! @ # ?</li> -->
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>}
+                    </div>
+
+                    <!--  =============================   email  ========= -->
+                    <div>
+                        <label for="email" class="text-sm mb-1">Email Address</label>
+                        <div class="relative">
+                            <input formControlName="email" placeholder="name@example.com" class="form-control pl-11"
+                                id="email" type="email" value="" name="email">
+                            <i
+                                class="fa-solid fa-envelope w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                        </div>
+
+
+                        @if (this.RegisterForm.get('email')?.errors &&this.RegisterForm.get('email')?.touched ) {<div
+                            class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                            role="alert">
+                            <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                                <span class="font-medium">Ensure that these requirements are met:</span>
+                                <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                    @if (this.RegisterForm.get('email')?.getError('required'))
+                                    { <li>the Email is required</li>}
+
+                                    @if (this.RegisterForm.get('email')?.getError('email'))
+                                    { <li>ex: Name@gmail.com</li>}
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>}
+                    </div>
+
+                    <!--  =============================   Password  ========= -->
+
+                    <div>
+                        <label for="password" class="text-sm mb-1">Password</label>
+                        <div class="relative">
+                            <input formControlName="password" placeholder="Create a strong password"
+                                class="form-control pl-11" id="password" type="password" value="" name="password">
+                            <i class="fa-solid fa-lock w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                        </div>
+
+
+                        @if (this.RegisterForm.get('password')?.errors &&this.RegisterForm.get('password')?.touched ) {
+                        <div class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                            role="alert">
+                            <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                                <span class="font-medium">Ensure that these requirements are met:</span>
+                                <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                    @if (this.RegisterForm.get('password')?.getError('required'))
+                                    {<li>the password is required</li>}
+
+
+                                    @if (this.RegisterForm.get('password')?.getError('pattern')) { <li>At least 1 Upper
+                                        case character
+                                    </li>
+                                    <li>At least 1 lower case character</li>
+                                    <li>At least 1 number character</li>
+                                    <li>At least 1 lower case character</li>
+                                    <li>At least 1 of at least one special character, e.g., ! @ # ?</li>
+                                    <li>At least 8 characters</li>}
+
+                                </ul>
+                            </div>
+
+
+                        </div>}
+                    </div>
+
+                    <!-- =============================== Confirm Password -->
+                    <div>
+                        <label for="rePassword" class="text-sm mb-1">Confirm Password</label>
+                        <div class="relative">
+                            <input formControlName="rePassword" placeholder="Confirm your password"
+                                class="form-control pl-11" id="rePassword" type="password" value="" name="rePassword">
+                            <i class="fa-solid fa-lock w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                        </div>
+                        <!-- @if ( this.RegisterForm.get('rePassword')?.touched && (this.RegisterForm.get('rePassword')?.errors || this.RegisterForm.getError('mismatch')) ) -->
+
+                        @if ( this.RegisterForm.get('rePassword')?.touched &&
+                        ((this.RegisterForm.get('rePassword')?.errors )|| ( this.RegisterForm.getError('mismatch'))) ) {
+                        <div class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                            role="alert">
+                            <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                                <span class="font-medium">Ensure that these requirements are met:</span>
+                                <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+
+                                    @if (this.RegisterForm.get('rePassword')?.getError('required'))
+                                    { <li>the re-password is required</li>}
+
+
+                                    @if (this.RegisterForm.getError('mismatch'))
+                                    {<li>re-password and password must match</li>}
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>}
+                    </div>
+
+                    <!-- =============================== Date Of Birth  &&&  gender -->
+
+                    <div class="flex gap-3 items-center *:grow">
+
+                        <!-- -===================    Date Of Birth   =============== -->
+                        <div>
+                            <div>
+                                <label for="dateOfBirth" class="text-sm mb-1">Date Of Birth</label>
+                                <div class="relative">
+                                    <input formControlName="dateOfBirth" class="form-control pl-11" id="dateOfBirth"
+                                        type="date" value="" name="dateOfBirth">
+                                    <i
+                                        class="fa-solid fa-calendar w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                </div>
+
+                                @if (this.RegisterForm.get('dateOfBirth')?.errors &&
+                                this.RegisterForm.get('dateOfBirth')?.touched) { <div
+                                    class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                                    role="alert">
+                                    <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <span class="sr-only">Danger</span>
+                                    <div>
+                                        <span class="font-medium">Ensure that these requirements are met:</span>
+                                        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                            @if (this.RegisterForm.get('dateOfBirth')?.getError('required')) {<li>the
+                                                date of Birth is
+                                                required</li>}
+                                            <!-- <li>minimum age is 18 years</li>
+                                            <li>maximun age is 65 years</li> -->
+
+
+                                        </ul>
+                                    </div>
+
+
+                                </div>}
+                            </div>
+                        </div>
+
+                        <!-- =============== gender =============-->
+                        <div>
+                            <div>
+                                <label for="gender" class="text-sm mb-1">Gender</label>
+                                <div class="relative">
+                                    <select formControlName="gender" class="form-control py-2 pl-11" name="gender"
+                                        id="gender">
+                                        <option>Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <i
+                                        class="fa-solid fa-venus-mars w-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                </div>
+
+                                @if (this.RegisterForm.get('gender')?.errors &&
+                                this.RegisterForm.get('gender')?.touched) { <div
+                                    class="flex p-4 mb-4 mt-2 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                                    role="alert">
+                                    <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <span class="sr-only">Danger</span>
+                                    <div>
+                                        <span class="font-medium">Ensure that these requirements are met:</span>
+                                        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+
+                                            @if (this.RegisterForm.get('gender')?.getError('required'))
+                                            { <li>the gender is required</li>}
+
+
+                                        </ul>
+                                    </div>
+
+
+                                </div>}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    @if (errorMsg) {<div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft"
+                        role="alert">
+                        {{errorMsg}}
+                    </div>
+                    }
+
+                    @else if (successMsg) {<div class="p-4 mb-4 text-sm text-fg-success-strong rounded-base bg-success-soft"
+                        role="alert">
+                        {{successMsg}}
+                    </div>
+                    }
+                </div>
+
+     
+
+                <button  type="submit" [disabled]="this.RegisterForm.invalid || isLoading"
+                    class=" disabled:cursor-not-allowed disabled:from-gray-500 disabled:to-gray-400 btn w-full py-3 bg-linear-to-r from-blue-600 to-blue-400 border-none text-white font-bold">
+                    <span>Create Account</span>
+                 @if (isLoading) 
+                 {   <<i class="fa-solid fa-spinner fa-spin"></i>}
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
