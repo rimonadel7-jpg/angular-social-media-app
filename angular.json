@@ -29,12 +29,10 @@
               }
             ],
             "styles": [
-
               "./node_modules/ngx-spinner/animations/ball-newton-cradle.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css",
-                "./node_modules/ngx-toastr/toastr.css" 
-
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -44,6 +42,11 @@
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "fonts": {
+                  "inline": false
+                }
+              },
               "budgets": [
                 {
                   "type": "initial",
